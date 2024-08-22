@@ -3,7 +3,7 @@ import './Register.scss';
 import { Form, Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
 
-const RegisterForm = () => {
+const LoginForm = () => {
     const [form] = Form.useForm();
 
     const onFinish = (values: any) => {
@@ -13,7 +13,7 @@ const RegisterForm = () => {
         <div className="signup-form-container">
             <Form
                 form={form}
-                name="signup"
+                name="login"
                 onFinish={onFinish}
                 layout="vertical"
                 className="signup-form"
@@ -36,26 +36,17 @@ const RegisterForm = () => {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item
-                    name="confirmpassword"
-                    label="Confirm Password"
-                    rules={[{ required: true, message: 'Please input your confirm password!' }]}
-                >
-                    <Input.Password />
-                </Form.Item>
-
-
                 <Form.Item>
                     <Button type="primary" htmlType="submit" className="signup-button">
-                        Sign Up
+                        Log  In
                     </Button>
                 </Form.Item>
             </Form>
             <Paragraph style={{ marginTop: "2em"}}>
-                Already signed up? <Link to="/login">Login</Link>
+                Just getting started? <Link to="/register">Register</Link>
             </Paragraph>
         </div>
     );
 }
 
-export default RegisterForm;
+export default LoginForm;

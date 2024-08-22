@@ -9,7 +9,7 @@ const HeaderUI = () => {
                 <ul className="flex">
                     <li></li>
                     <li><NavLink to="/my-projects">My Projects</NavLink></li>
-                    <li><NavLink to="/">Logout</NavLink></li>
+                    <li><NavLink to="/register"><Button ghost={true}>Register</Button></NavLink></li>
                     <li><NavLink to="/create-project"><Button ghost={true}>New Project</Button></NavLink></li>
                 </ul>
             </nav>

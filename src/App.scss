@@ -4,7 +4,7 @@ $primary-color: #333333;
 $bg-color: #F5F5F5;
 $secondary-color: #fdfdfd;
 $primary-font: 'Roboto', sans-serif;
-$nav-color: #007bff;
+$nav-hover-color: #007bff;
 
 *{
   margin: 0;
@@ -38,9 +38,9 @@ header.app-header{
   }
   a {
     text-decoration: none;
-    color: $nav-color;
+    color: $primary-color;
     &:hover {
-      color: $primary-color;
+      color: $nav-hover-color;
     }
   }
 
