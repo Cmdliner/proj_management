@@ -2,5 +2,6 @@
 
 
 ## TODO
-- configure vercel
-- configure vite env variables
+- Create Project form
+- Create Project List
+- Create Project Details

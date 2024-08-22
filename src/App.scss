@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary-color: #333333;
+$bg-color: #F5F5F5;
+$secondary-color: #fdfdfd;
+$primary-font: 'Roboto', sans-serif;
+$nav-color: #007bff;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $bg-color;
+  color: $primary-color;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header.app-header{
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+  position: fixed;
+  width: 100vw;
+  z-index: 999999;
+  border-bottom: 1px solid;
+  font-family: $primary-font;
+  & div {
+    font-weight: 900;
+    font-size: x-large;
+  }
+  ul {
+    list-style: none;
+    gap: .5em;
+  }
+  a {
+    text-decoration: none;
+    color: $nav-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+}
+
+// Project List
+.proj-list {
+  padding-top: 10em;          
+  padding-inline: 2em;
+  .search-container {
+    justify-content: center;
+  }
+  .search-projects {
+    width: 60%;
+  }
+}
+
+// Project Item
+.project-item {
+  padding: 2em;
+  &-text-data{
+    flex-direction: column;
+    &-name {
+      font-size: larger;
+      font-weight: bold;
+    }
+  }
+  
+}
