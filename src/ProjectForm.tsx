@@ -1,4 +1,4 @@
-import { Button, Dropdown, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { FC } from "react";
 import { type ProjectForm } from "./lib/Project";
 import TextArea from "antd/es/input/TextArea";
@@ -9,7 +9,7 @@ const ProjectForm: FC = () => {
     return (
         <Form
             name="projectForm"
-            style={{ maxWidth: "60%", margin: "auto", paddingTop: "10em" }}
+            style={{ maxWidth: "60%", margin: "auto" }}
             onFinish={submitForm}
             onFinishFailed={handleError}
             autoComplete="off"

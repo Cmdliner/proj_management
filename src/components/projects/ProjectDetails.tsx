@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { IProjectItem } from "../../lib/Project";
 import Paragraph from "antd/es/typography/Paragraph";
+import { PlusCircleOutlined } from "@ant-design/icons";
+import { FloatButton } from "antd";
 
 const ProjectDetails: FC<IProjectItem>  = ({name, description, status}) => {
     return (
@@ -9,7 +11,8 @@ const ProjectDetails: FC<IProjectItem>  = ({name, description, status}) => {
             <Paragraph>
                 {description}
             </Paragraph>
-            <span>{status}</span>
+            <span>{status}</span>   
+            <FloatButton icon={<PlusCircleOutlined/>}  />
         </div>
     );
 }

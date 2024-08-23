@@ -10,8 +10,10 @@ $nav-hover-color: #007bff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: $bg-color;
   color: $primary-color;
+}
+body{
+  background-color: $bg-color;
 }
 .flex {
   display: flex;
@@ -25,6 +27,7 @@ header.app-header{
   padding: 2em;
   position: fixed;
   width: 100vw;
+  background-color: $bg-color;
   z-index: 999999;
   border-bottom: 1px solid;
   font-family: $primary-font;
@@ -46,9 +49,13 @@ header.app-header{
 
 }
 
+.main-content {
+  padding-top: 7em;
+}
+
 // Project List
 .proj-list {
-  padding-top: 10em;          
+  // padding-top: 10em;          
   padding-inline: 2em;
   .search-container {
     justify-content: center;
