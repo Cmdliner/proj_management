@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { IProjectItem } from "../../lib/Project";
 import Paragraph from "antd/es/typography/Paragraph";
+import { Link } from "react-router-dom";
 
-const ProjectItem: FC<IProjectItem> = ({ name, description, status }) => {
-  console.log(description);
+const ProjectItem: FC<IProjectItem> = ({ name, description, status, id }) => {
   return (
     <section className="project-item flex">
-      <div className="text-data">
+      <Link to={`/project/${id}`} className="text-data">
         <div className="name">{name}</div>
         <Paragraph
           ellipsis={{ rows: 1, expandable: true, symbol: "more" }}
@@ -14,7 +14,7 @@ const ProjectItem: FC<IProjectItem> = ({ name, description, status }) => {
         >
           {description}
         </Paragraph>
-      </div>
+      </Link>
 
       <div>{status}</div>
     </section>

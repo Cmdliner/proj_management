@@ -2,6 +2,4 @@
 
 
 ## TODO
-- Create Project form
-- Create Project List
-- Create Project Details
+- Implement better erro handling (setError, try-catch)

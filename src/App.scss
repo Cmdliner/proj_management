@@ -58,6 +58,7 @@ header.app-header{
   // padding-top: 10em;          
   padding-inline: 2em;
   .search-container {
+    flex-direction: column;
     justify-content: center;
   }
   .search-projects {
@@ -68,12 +69,15 @@ header.app-header{
 // Project Item
 .project-item {
   padding: 2em;
+  text-decoration: none;
   &-text-data{
     flex-direction: column;
     &-name {
       font-size: larger;
       font-weight: bold;
     }
-  }
+  }                                                                                                                                                                                                                                                                                           
   
 }
+
+.ad
