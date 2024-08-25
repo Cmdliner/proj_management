@@ -23,7 +23,6 @@ const ProjectsList = () => {
                 setError(data.error);
                 return;
             }
-            console.log(data);
             setProjects(data?.projects as any as IProject[]);
         }
         )();
@@ -37,7 +36,7 @@ const ProjectsList = () => {
                 <Search className="search-projects" />
             </div>
             {projects && projects.length > 0 && projects.map((proj, index) => (
-                <ProjectItem key={index} name={proj.name} description={proj.description} status={proj.status} id={proj.id} />
+                <ProjectItem key={index} name={proj.name} description={proj.description} status={proj.status as string} id={proj.id} />
             ))}
 
         </main>
