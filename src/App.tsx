@@ -5,8 +5,7 @@ import ProjectsList from "./ProjectsList";
 import ProjectForm from "./ProjectForm";
 import RegisterForm from "./auth/Register";
 import LoginForm from "./auth/Login";
-import ProjectDetails from "./ProjectDetails";
-import ProjectPage from "./final";
+import ProjectPage from "./ProjectDetails";
 const App = () => {
 
     return (
@@ -15,11 +14,9 @@ const App = () => {
             <div className="main-content">
                 <Routes>
                     <Route path="/" element={<ProjectsList />} />
-                    {/* <Route path="/faux" element={<ProjectPage />} /> */}
-                    <Route path="/project/:projectID" element={<ProjectPage />} />
                     <Route path="/my-projects" element={<ProjectsList />} />
                     <Route path="/create-project" element={<ProjectForm />} />
-                    {/* <Route path="/project/:projectID" element={<ProjectDetails />} /> */}
+                    <Route path="/project/:projectID" element={<ProjectPage />} />
 
                     <Route path="/register" element={<RegisterForm />} />
                     <Route path="/login" element={<LoginForm />} />
