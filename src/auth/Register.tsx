@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ISignUpForm } from '../lib/User';
 import { useState } from 'react';
 import app from '../lib/constants';
-import { setHeadersIfAuth, storeToken } from '../lib/getHeader';
+import { setHeadersIfAuth, storeToken } from '../lib/auth';
 import { ResponseType } from '../lib/Data';
 
 const RegisterForm = () => {

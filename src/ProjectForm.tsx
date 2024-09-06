@@ -2,7 +2,7 @@ import { Button, DatePicker, Form, Input } from "antd";
 import { FC, useState } from "react";
 import { type ProjectForm } from "./lib/Project";
 import TextArea from "antd/es/input/TextArea";
-import { setHeadersIfAuth } from "./lib/getHeader";
+import { setHeadersIfAuth } from "./lib/auth";
 import app from "./lib/constants";
 import { type ResponseType } from "./lib/Data";
 import { useNavigate } from "react-router-dom";

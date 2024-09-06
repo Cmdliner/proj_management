@@ -7,7 +7,7 @@ import styles from './Project.module.scss';
 import { useParams } from "react-router-dom";
 import { IProject } from "./lib/Project";
 import app from "./lib/constants";
-import { setHeadersIfAuth } from "./lib/getHeader";
+import { setHeadersIfAuth } from "./lib/auth";
 
 const { Title, Text, Paragraph } = Typography;
 const { Option } = Select;

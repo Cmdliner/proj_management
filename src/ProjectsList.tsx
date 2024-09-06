@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { IProject } from "./lib/Project";
 import app from "./lib/constants";
 import { ResponseType } from "./lib/Data";
-import { setHeadersIfAuth } from "./lib/getHeader";
+import { setHeadersIfAuth } from "./lib/auth";
 
 const ProjectsList = () => {
     const [projects, setProjects] = useState<IProject[]>();

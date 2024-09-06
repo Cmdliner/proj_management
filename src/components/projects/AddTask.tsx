@@ -3,7 +3,7 @@ import { Form, Input, DatePicker, Button } from 'antd';
 import styles from './AddTask.module.scss';
 import { useNavigate } from 'react-router-dom';
 import app from '../../lib/constants';
-import { setHeadersIfAuth } from '../../lib/getHeader';
+import { setHeadersIfAuth } from '../../lib/auth';
 
 interface AddTaskFormProps {
   onClose: () => void;

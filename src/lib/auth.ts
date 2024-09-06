@@ -1,7 +1,5 @@
 export const authToken = localStorage.getItem('Authorization');
 
-
-
 export function setHeadersIfAuth(): HeadersInit {
     const fetchHeaders: HeadersInit = {
         "Content-Type": "application/json"
