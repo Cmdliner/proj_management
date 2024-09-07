@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Typography, Card, Tag, List, Empty, Button, Select, message, Popconfirm, Tooltip, FloatButton } from 'antd';
 import { PlusOutlined, EditFilled, DeleteFilled, CheckCircleFilled, ClockCircleFilled, ExclamationCircleFilled } from '@ant-design/icons';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import AddEditTaskForm from './addedit';
+import AddEditTaskForm from './AddEdit';
 import styles from './Project.module.scss';
 import { useParams } from "react-router-dom";
 import { IProject } from "./lib/Project";
@@ -103,7 +103,7 @@ const ProjectPage: React.FC = () => {
 
   const deleteTask = async (taskId: string) => {
     try {
-      const res = await fetch(`${app.API_SERVER}/project/${projectID}/task/${taskId}`, {
+      const res = await fetch(`${app.API_SERVER}/project/task/${taskId}`, {
         method: "DELETE",
         mode: "cors",
         credentials: "include",

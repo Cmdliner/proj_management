@@ -2,4 +2,4 @@
 
 
 ## TODO
-- Implement better erro handling (setError, try-catch)
+- Implement better error handling (setError, try-catch)

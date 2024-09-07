@@ -1,7 +1,6 @@
-// AddEditTaskForm.tsx
 import React from 'react';
 import { Form, Input, Select, Button } from 'antd';
-import styles from './addedit.module.scss';
+import styles from './AddEdit.module.scss';
 
 interface Task {
   id: string;

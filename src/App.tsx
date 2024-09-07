@@ -6,6 +6,7 @@ import ProjectForm from "./ProjectForm";
 import RegisterForm from "./auth/Register";
 import LoginForm from "./auth/Login";
 import ProjectPage from "./ProjectDetails";
+
 const App = () => {
 
     return (
