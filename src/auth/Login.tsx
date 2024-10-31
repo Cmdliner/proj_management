@@ -12,7 +12,7 @@ const LoginForm = () => {
     const onFinish = async () => {
         const { username, password } = form.getFieldsValue();
         const fetchOpts: RequestInit = {
-            method: "post",
+            method: "POST",
             mode: "cors",
             credentials: "include",
             headers: setHeadersIfAuth(),
