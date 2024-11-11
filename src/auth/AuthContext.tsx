@@ -35,7 +35,7 @@ const AuthProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
     const isAuthenticated = token && parseInt(expiry  || "0") > Date.now()   ? true : false
 
     useEffect(() => {
-        if(!token || parseInt(expiry || "0") < Date.now()) {
+        if(!token) {
             navigate("/login");
         }
     }, [token, expiry, navigate]);

@@ -5,17 +5,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ISignUpForm } from '../lib/User';
 import { useState } from 'react';
 import app from '../lib/constants';
-import { setHeadersIfAuth, storeToken } from '../lib/auth';
+import { setHeadersIfAuth } from '../lib/auth';
 import { ResponseType } from '../lib/Data';
+import { useAuth } from './AuthContext';
 
 const RegisterForm = () => {
     const [error, setError] = useState<string>();
     const navigate = useNavigate();
     const [form] = Form.useForm<ISignUpForm>();
+    const { login } = useAuth();
 
     const onFinish = async () => {
         const { username, password, confirmPassword } = form.getFieldsValue();
-        if(password !== confirmPassword) {
+        if (password !== confirmPassword) {
             setError('Password does not match confirm password');
             return;
         }
@@ -24,12 +26,12 @@ const RegisterForm = () => {
             headers: setHeadersIfAuth(),
             body: JSON.stringify({ username, password })
         });
-        if(res.status === 201) {
+        if (res.status === 201) {
             const authHeader = res.headers.get('Authorization');
-            if(authHeader) storeToken(authHeader.split(' ')[1]);
+            if (authHeader) login(authHeader?.split(" ")?.[1]!, 29 * 24 * 60 * 60);
         }
         const data: ResponseType = await res.json();
-        if(data.error) {
+        if (data.error) {
             setError(error);
             return;
         }
@@ -38,7 +40,7 @@ const RegisterForm = () => {
     };
     return (
         <div className="signup-form-container">
-            { error && <div>{error}</div> }
+            {error && <div>{error}</div>}
             <Form
                 form={form}
                 name="signup"

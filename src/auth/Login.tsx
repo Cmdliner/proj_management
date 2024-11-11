@@ -4,10 +4,12 @@ import { Form, Input, Button } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import app from '../lib/constants';
 import { setHeadersIfAuth } from '../lib/auth';
+import { useAuth } from './AuthContext';
 
 const LoginForm = () => {
-    const [ form ] = Form.useForm();
+    const [form] = Form.useForm();
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const onFinish = async () => {
         const { username, password } = form.getFieldsValue();
@@ -19,11 +21,11 @@ const LoginForm = () => {
             body: JSON.stringify({ username, password })
         }
         const res = await fetch(`${app.API_SERVER}/auth/login`, fetchOpts);
-        if(res.status === 200) {
-            localStorage.setItem("Authorization", res.headers.get("Authorization")?.split(" ")[1] as string);
+        if (res.status === 200) {
+            login(res.headers.get("Authorization")?.split(" ")?.[1]!, 29 * 24 * 60 * 60);
         }
         const data = await res.json();
-        if(data["success"]) {
+        if (data["success"]) {
             navigate("/");
         }
         console.error(data["error"]);
