@@ -35,7 +35,8 @@ const AuthProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
     const isAuthenticated = token && parseInt(expiry  || "0") > Date.now()   ? true : false
 
     useEffect(() => {
-        if(!token) {
+        const excludedUrl = "/register"
+        if(!token && !location.pathname.includes(excludedUrl)) {
             navigate("/login");
         }
     }, [token, expiry, navigate]);
